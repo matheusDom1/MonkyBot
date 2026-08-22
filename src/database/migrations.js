@@ -18,6 +18,12 @@ const createTable = async () => {
         FOREIGN KEY (userId) REFERENCES users(userId)
     );`);
 
+    await db.exec(`CREATE TABLE IF NOT EXISTS bank (
+        userId TEXT PRIMARY KEY,
+        moedas,
+        FOREIGN KEY (userId) REFERENCES users(userId)
+        )`)
+
     console.log("✔ Banco de dados inicializado.");
 };
 
