@@ -1,4 +1,4 @@
-const { Events, EmbedBuilder } = require("discord.js");
+const { Events, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: Events.GuildMemberAdd,
@@ -9,16 +9,21 @@ module.exports = {
 
         if (!channel) return;
 
-        const avatarURL = member.displayAvatarURL({
-            size: 1024,
-            forceStatic: false
+        const avatarExtension = member.user.avatar?.startsWith('a_')
+            ? 'gif'
+            : 'png';
+
+        const avatarURL = member.user.displayAvatarURL({
+            extension: avatarExtension,
+            size: 1024
         });
 
         const embed = new EmbedBuilder()
-            .setColor("Green")
-            .setTitle("Bem vindo!")
+            .setColor('Green')
+            .setTitle('🐵 Bem-vindo!')
             .setDescription(
-                `🐵 Olá ${member}!\n\nVocê agora se tornou um macaco. Aproveite o servidor!`
+                `🐵 Olá ${member}!\n\n` +
+                `Você agora se tornou um macaco. Aproveite o servidor!`
             )
             .setImage(avatarURL)
             .setFooter({
@@ -32,9 +37,9 @@ module.exports = {
             });
         } catch (error) {
             console.error(
-                "Erro ao enviar mensagem de entrada:",
+                'Erro ao enviar mensagem de entrada:',
                 error
             );
         }
-    },
+    }
 };
