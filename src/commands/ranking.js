@@ -45,7 +45,7 @@ module.exports = {
                     positionEmojis[position] || `${position}.`;
 
                 description +=
-                    `${positionEmoji} **${username}** — 🍌 ${user.moedas}\n`;
+                    `${positionEmoji} **${username}** — 🍌 ${user.patrimonio}\n`;
             }
 
             if (topUsers.length === 0) {
@@ -61,7 +61,7 @@ module.exports = {
             if (userPosition) {
                 embed.addFields({
                     name: "🐒 Sua posição",
-                    value: `#${userPosition.position} — 🍌 ${userPosition.moedas} bananas`,
+                    value: `#${userPosition.position} — 🍌 ${userPosition.patrimonio} bananas`,
                     inline: false
                 });
             }

@@ -19,6 +19,8 @@ const updateDate = async (userId, date) => {
     const db = await getDatabase();
     return await db.run("UPDATE users SET lastDaily = ? WHERE userId = ?", [date, userId]);
 }
+
+
 module.exports = {
     getUser,
     createUser,

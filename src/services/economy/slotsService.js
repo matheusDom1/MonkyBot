@@ -14,7 +14,7 @@ const SYMBOLS = [
 
 const MULTIPLIERS = {
     THREE_EQUAL: 10,
-    TWO_EQUAL: 1.5,
+    TWO_EQUAL: 3.0,
     NOTHING: 0
 };
 
