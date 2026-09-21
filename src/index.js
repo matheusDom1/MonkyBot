@@ -4,7 +4,6 @@ const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { createTable } = require("./database/migrations.js");
 
 const loadCommands = require("./handlers/commandHandler");
-const loadButtons = require("./handlers/buttonHandler");
 const loadEvents = require("./handlers/eventHandler");
 
 const client = new Client({
@@ -21,7 +20,6 @@ const client = new Client({
 async function main() {
     try {
         loadCommands(client);
-        loadButtons(client);
         loadEvents(client);
 
         await createTable();
